@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
+body {
+    background-color: #0c0916;
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mygrid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+}
+progress {
+    appearance: none;
+    -ms-progress-appearance: none;
+}
+::-moz-progress-bar {
+    background-color: #d9d9d98c;
+    border-radius: 100px;
+    height: 4px;
+}
+progress::-webkit-progress-bar {
+    background-color: #d9d9d98c;
+    border-radius: 100px;
+    height: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+progress::-webkit-progress-value {
+    background: linear-gradient(to right, #37c49f, #27e48c);
+    border-radius: 100px;
 }

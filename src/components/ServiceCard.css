@@ -1,0 +1,11 @@
+.servicecard .capa {
+    opacity: 0;
+}
+
+.capa {
+    transition: 0.3s all ease;
+}
+
+.servicecard:hover .capa {
+    opacity: 0.7;
+}
