@@ -1,11 +1,12 @@
 import React, { HTMLAttributes, ReactNode } from "react";
+import { withLog } from "../hocs/withLog";
 import "./PrimaryButton.css";
 
 type PrimaryButtonProps = {
     children: ReactNode;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export default function PrimaryButton(props: PrimaryButtonProps) {
+function PrimaryButton(props: PrimaryButtonProps) {
     return (
         <button
             {...props}
@@ -16,3 +17,5 @@ export default function PrimaryButton(props: PrimaryButtonProps) {
         </button>
     );
 }
+
+export default withLog(PrimaryButton, "Renderizou um botão primário");

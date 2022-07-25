@@ -10,7 +10,7 @@ export default function FacebookIcon({ className }: FacebookIconProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 40 40"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
             <path
                 fill-rule="evenodd"

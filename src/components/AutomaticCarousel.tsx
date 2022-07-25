@@ -1,11 +1,14 @@
-import React from "react";
+import React, { memo, useEffect } from "react";
 import { motion } from "framer-motion";
 
 type AutomaticCarouselProps = {
     images: string[];
 };
 
-export default function AutomaticCarousel({ images }: AutomaticCarouselProps) {
+function AutomaticCarousel({ images }: AutomaticCarouselProps) {
+    useEffect(() => {
+        console.log("Re-renderizando o carrossel automático");
+    }, []);
     return (
         <div className="h-96 mt-[-4rem] w-full relative overflow-hidden">
             <motion.div
@@ -21,7 +24,10 @@ export default function AutomaticCarousel({ images }: AutomaticCarouselProps) {
             >
                 {images.map((image, i) => {
                     return (
-                        <motion.div className="h-full w-[500px] mx-3 flex-none">
+                        <motion.div
+                            key={i}
+                            className="h-full w-[500px] mx-3 flex-none"
+                        >
                             <img
                                 src={image}
                                 alt=""
@@ -34,3 +40,5 @@ export default function AutomaticCarousel({ images }: AutomaticCarouselProps) {
         </div>
     );
 }
+
+export default memo(AutomaticCarousel);

@@ -10,7 +10,7 @@ export default function MessengerIcon({ className }: MessengerIconProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 52 52"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
             <path
                 fill-rule="evenodd"

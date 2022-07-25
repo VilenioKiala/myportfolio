@@ -26,9 +26,10 @@ export default function ServiceSlider(props: ServiceSliderProps) {
                         ease: "easeOut",
                     }}
                 >
-                    {props.serviceData.map((data) => {
+                    {props.serviceData.map((data, i) => {
                         return (
                             <ServiceCard
+                                key={i}
                                 Icon={data.Icon}
                                 title={data.title}
                                 text={data.text}

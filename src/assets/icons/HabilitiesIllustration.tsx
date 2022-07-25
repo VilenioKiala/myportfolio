@@ -12,9 +12,9 @@ export default function HabilitiesIllustration({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 690 826"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
-            <g clip-path="url(#clip0_147_73)">
+            <g clipPath="url(#clip0_147_73)">
                 <path
                     d="M643.454 140H481.105V351.115H643.454V140Z"
                     fill="#F4F4F4"

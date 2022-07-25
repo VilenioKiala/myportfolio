@@ -10,7 +10,7 @@ export default function EmailIconStroke({ className }: EmailIconStrokeProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
             <g clip-path="url(#clip0_430_627)">
                 <path

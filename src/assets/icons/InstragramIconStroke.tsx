@@ -12,7 +12,7 @@ export default function InstragramIconStroke({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 60 60"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
             <path
                 fill-rule="evenodd"

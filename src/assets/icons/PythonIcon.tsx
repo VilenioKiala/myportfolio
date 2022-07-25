@@ -10,7 +10,7 @@ export default function PythonIcon({ className }: PythonIconProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 62 63"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
             <path
                 d="M30.3066 35.9371C27.5799 35.9371 25.3695 33.7267 25.3695 31C25.3695 28.2733 27.5799 26.0629 30.3066 26.0629C33.0333 26.0629 35.2437 28.2733 35.2437 31C35.2437 33.7267 33.0333 35.9371 30.3066 35.9371Z"
@@ -33,8 +33,8 @@ export default function PythonIcon({ className }: PythonIconProps) {
                     y2="36.8675"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#387EB8" />
-                    <stop offset="1" stop-color="#366994" />
+                    <stop stopColor="#387EB8" />
+                    <stop offset="1" stopColor="#366994" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_212_188"
@@ -44,8 +44,8 @@ export default function PythonIcon({ className }: PythonIconProps) {
                     y2="57.1736"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FFE052" />
-                    <stop offset="1" stop-color="#FFC331" />
+                    <stop stopColor="#FFE052" />
+                    <stop offset="1" stopColor="#FFC331" />
                 </linearGradient>
             </defs>
         </svg>

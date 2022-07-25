@@ -24,6 +24,7 @@ import HabilitiesIllustration from "../../assets/icons/HabilitiesIllustration";
 import ReactIcon from "../../assets/icons/ReactIcon";
 import NodeJSIcon from "../../assets/icons/NodeJSIcon";
 import PythonIcon from "../../assets/icons/PythonIcon";
+import { withTalkModal } from "../../hocs/withTalkModal";
 
 const projectoemmente = require("../../assets/images/projectoemmente.png");
 const mycarimage = require("../../assets/images/mycarimage.jpg");
@@ -39,7 +40,7 @@ type HomeProps = {
     openModal: () => void;
 };
 
-export default function Home({ openModal }: HomeProps) {
+function Home({ openModal }: HomeProps) {
     const [tabSelectedIndex, setTabSelectedIndex] = React.useState<number>(0);
 
     return (
@@ -302,3 +303,5 @@ export default function Home({ openModal }: HomeProps) {
         </>
     );
 }
+
+export default withTalkModal(Home);

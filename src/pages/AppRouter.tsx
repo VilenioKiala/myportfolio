@@ -3,24 +3,16 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./home/Home";
 import Trabalhos from "./trabalhos/Trabalhos";
 import SobreMim from "./sobremim/SobreMim";
+import { withLog } from "../hocs/withLog";
 
-type AppRouterProps = {
-    openModal: () => void;
-};
-
-export default function AppRouter({ openModal }: AppRouterProps) {
+function AppRouter() {
     return (
         <Switch>
             <Route path="/trabalhos" component={() => <Trabalhos />} />
-            <Route
-                path="/sobremim"
-                component={() => <SobreMim openModal={openModal} />}
-            />
-            <Route
-                path="/"
-                exact
-                component={() => <Home openModal={openModal} />}
-            />
+            <Route path="/sobremim" component={SobreMim} />
+            <Route path="/" exact component={Home} />
         </Switch>
     );
 }
+
+export default withLog(AppRouter, "Renderizou o App Router");

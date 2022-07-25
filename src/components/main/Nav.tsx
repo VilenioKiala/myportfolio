@@ -1,6 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 import MyLogo from "../../assets/icons/MyLogo";
+import { withLog } from "../../hocs/withLog";
 import PrimaryButton from "../PrimaryButton";
 import "./Nav.css";
 
@@ -8,7 +9,7 @@ type NavProps = {
     openModal: () => void;
 } & HTMLAttributes<HTMLDivElement>;
 
-export default function Nav(props: NavProps) {
+function Nav(props: NavProps) {
     return (
         <nav
             {...props}
@@ -47,3 +48,5 @@ export default function Nav(props: NavProps) {
         </nav>
     );
 }
+
+export default withLog(Nav, "Renderizou a NAV!");

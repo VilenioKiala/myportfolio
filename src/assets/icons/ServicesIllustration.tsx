@@ -12,7 +12,7 @@ export default function ServicesIllustration({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 683 680"
             fill="none"
-            className={`${className}`}
+            className={`w-full h-full ${className}`}
         >
             <path
                 d="M360.573 497.625H246.858V653.315H360.573V497.625Z"
