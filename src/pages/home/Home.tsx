@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import AutomaticCarousel from "../../components/AutomaticCarousel";
 import Bobble from "../../components/Bobble";
 import Banner from "../../components/main/Banner";
@@ -25,6 +25,10 @@ import ReactIcon from "../../assets/icons/ReactIcon";
 import NodeJSIcon from "../../assets/icons/NodeJSIcon";
 import PythonIcon from "../../assets/icons/PythonIcon";
 import { withTalkModal } from "../../hocs/withTalkModal";
+import HTMLIcon from "../../assets/icons/HTMLIcon";
+import CSSIcon from "../../assets/icons/CSSIcon";
+import { withImageDisplayer } from "../../hocs/withImageDisplayer";
+import withTitleAndContent from "../../hocs/withTitleAndContent";
 
 const projectoemmente = require("../../assets/images/projectoemmente.png");
 const mycarimage = require("../../assets/images/mycarimage.jpg");
@@ -35,12 +39,19 @@ const musicappimage = require("../../assets/images/musicappimage.jpg");
 const mwangoplayerimage = require("../../assets/images/mwangoplayerimage.jpg");
 const decoraimage = require("../../assets/images/decoraimage.jpg");
 const alimentaimage = require("../../assets/images/alimentaimage.jpg");
+const profagilimage = require("../../assets/images/profagilimage.png");
 
 type HomeProps = {
     openModal: () => void;
+    openImageDisplayer: () => void;
+    setImageOnDisplayer: Dispatch<SetStateAction<string>>;
 };
 
-function Home({ openModal }: HomeProps) {
+function Home({
+    openModal,
+    openImageDisplayer,
+    setImageOnDisplayer,
+}: HomeProps) {
     const [tabSelectedIndex, setTabSelectedIndex] = React.useState<number>(0);
 
     return (
@@ -88,14 +99,14 @@ function Home({ openModal }: HomeProps) {
                 ]}
             />
 
-            <Section className="mx-6 md:16 lg:mx-36 my-28 mt-10 mygrid relative overflow-hidden">
+            <Section className="px-6 md:px-16 lg:px-36 my-28 mygrid relative overflow-hidden">
                 <Bobble initial={{ top: 200, left: 200 }} bobbleSize={70} />
                 <Bobble
-                    initial={{ top: 40, left: window.innerWidth - 400 }}
+                    initial={{ top: 40, left: window.innerWidth - 200 }}
                     bobbleSize={90}
                 />
                 <div className="col-start-1 col-end-13 md:col-end-7 w-full h-[30rem]">
-                    <ServicesIllustration className="w-full h-full" />
+                    <ServicesIllustration />
                 </div>
                 <div className="col-start-1 md:col-start-7 col-span-full">
                     <SectionTitle preTitle="SERVIÇOS">
@@ -106,32 +117,24 @@ function Home({ openModal }: HomeProps) {
                         <ServiceSlider
                             serviceData={[
                                 {
-                                    Icon: (
-                                        <WebsiteIcon className="w-full h-full" />
-                                    ),
+                                    Icon: <WebsiteIcon />,
                                     title: "DESENVOLVIMENTO DE WEBSITES",
-                                    text: "Do Lorem dolor dolore amet dolore eiusmod in dolor quis aliqua. Anim nisi aliqua enim aliquip tempor. Lorem do consequat tempor culpa mollit est.",
+                                    text: "Criarei para si um Website para a sua empresa ou negócio. Uma forma muito mais fácil e produtiva de capturar clientes. GANHE AUTORIDADE NO MERCADO!",
                                 },
                                 {
-                                    Icon: (
-                                        <AndroidIcon className="w-full h-full" />
-                                    ),
+                                    Icon: <AndroidIcon />,
                                     title: "DESENVOLVIMENTO DE APLICATIVOS ANDROID",
-                                    text: "Do Lorem dolor dolore amet dolore eiusmod in dolor quis aliqua. Anim nisi aliqua enim aliquip tempor. Lorem do consequat tempor culpa mollit est.",
+                                    text: "Tem ideia de um aplicativo android? Fale comigo que eu transformarei a sua ideia em REALIDADE!",
                                 },
                                 {
-                                    Icon: (
-                                        <DesktopIcon className="w-full h-full" />
-                                    ),
+                                    Icon: <DesktopIcon />,
                                     title: "DESENVOLVIMENTO DE APLICATIVOS DESKTOP",
-                                    text: "Adipisicing commodo anim exercitation fugiat nulla deserunt. In laboris laboris anim culpa dolor pariatur aliquip.",
+                                    text: "Aumente a produtividade de sua empresa tendo um aplicativo desktop que realize tarefas de uma forma mais rápida e com poucos cliques.",
                                 },
                                 {
-                                    Icon: (
-                                        <ScriptIcon className="w-full h-full" />
-                                    ),
+                                    Icon: <ScriptIcon />,
                                     title: "DESENVOLVIMENTO DE SCRIPTS DE AUTOMAÇÃO",
-                                    text: "Laborum velit ex ex minim quis consequat commodo mollit adipisicing ad. Non laborum enim culpa est ut et fugiat anim minim eiusmod minim nulla ut. Consectetur enim sunt Lorem adipisicing deserunt velit.",
+                                    text: "Gasta muito tempo e esforço para realizar determinadas tarefas no computador? Sabia que essas tarefas podem ser feitas com poucos ou nenhum clique? Fale comigo e eu crio um script para fazer essas tarefas por você!",
                                 },
                             ]}
                         />
@@ -150,35 +153,69 @@ function Home({ openModal }: HomeProps) {
                             "WEBSITES",
                             "APLICATIVOS ANDROID",
                             "APLICATIVOS DESKTOP",
-                            "SCRIPT DE AUTOMAÇÃO",
                         ]}
                         selectedIndex={tabSelectedIndex}
                         icons={[
-                            <WebsiteIcon className="w-full h-full" />,
-                            <AndroidIcon className="w-full h-full" />,
-                            <DesktopIcon className="w-full h-full" />,
-                            <ScriptIcon className="w-full h-full" />,
+                            <WebsiteIcon />,
+                            <AndroidIcon />,
+                            <DesktopIcon />,
                         ]}
                         setSelectedIndex={setTabSelectedIndex}
                     />
                 </div>
 
                 <div className="works col-start-1 md:col-start-5 col-span-full md:grid md:grid-cols-2 md:gap-x-3 relative z-2">
-                    <WorkCard
-                        image={mycarimage}
-                        name="LOREM IPSUM"
-                        text="Labore cillum proident duis qui incididunt occaecat eiusmod reprehenderit labore deserunt aliqua. Laborum culpa et proident magna sint commodo est aliquip aliqua laboris ad nulla mollit. "
-                        link=""
-                        mobileLink=""
-                    />
-                    <WorkCard
-                        image={hotelimage}
-                        name="LOREM IPSUM"
-                        text="Pariatur cupidatat mollit nulla ea exercitation sit ad est in consectetur voluptate. Duis veniam amet velit do occaecat tempor ea dolor occaecat sunt consectetur dolore ad id. Amet duis consequat dolore culpa. Ad in officia non commodo sit est exercitation sit officia laboris exercitation laboris sint quis"
-                        link=""
-                        mobileLink=""
-                        className="md:hidden lg:block"
-                    />
+                    {tabSelectedIndex === 0 && (
+                        <>
+                            <WorkCard
+                                image={mycarimage}
+                                name="My Car App"
+                                text="Website de uma empresa de Aluguel de carros."
+                                openImageDisplayer={openImageDisplayer}
+                                setImageOnDisplayer={setImageOnDisplayer}
+                            />
+                            <WorkCard
+                                image={decoraimage}
+                                name="Decora"
+                                text="Website de uma empresa de venda de mobílias."
+                                openImageDisplayer={openImageDisplayer}
+                                setImageOnDisplayer={setImageOnDisplayer}
+                                className="md:hidden lg:block"
+                            />
+                        </>
+                    )}
+
+                    {tabSelectedIndex === 1 && (
+                        <>
+                            <WorkCard
+                                image={musicappimage}
+                                name="Musicapp"
+                                text="Uma mini plataforma de streaming de músicas"
+                                openImageDisplayer={openImageDisplayer}
+                                setImageOnDisplayer={setImageOnDisplayer}
+                            />
+                            <WorkCard
+                                image={mycarmobileimage}
+                                name="MyCar"
+                                text="Aplicativo de aluguel de carros."
+                                openImageDisplayer={openImageDisplayer}
+                                setImageOnDisplayer={setImageOnDisplayer}
+                                className="md:hidden lg:block"
+                            />
+                        </>
+                    )}
+
+                    {tabSelectedIndex === 2 && (
+                        <>
+                            <WorkCard
+                                image={profagilimage}
+                                name="Profágil"
+                                text="Software direcionado para os professores de mais de 1 escola, permite fazer a gestão de todos os alunos no seu todo, tal como suas avaliações contínuas. Permite calcular muito mais rápido a média das avaliações contínuas e a média final dos alunos."
+                                openImageDisplayer={openImageDisplayer}
+                                setImageOnDisplayer={setImageOnDisplayer}
+                            />
+                        </>
+                    )}
                 </div>
                 <SeeMoreButton
                     to="/trabalhos"
@@ -195,56 +232,56 @@ function Home({ openModal }: HomeProps) {
                     bobbleSize={90}
                 />
                 <div className="col-start-1 col-end-12 md:col-end-7 w-full h-[30rem]">
-                    <HabilitiesIllustration className="w-full h-full" />
+                    <HabilitiesIllustration />
                 </div>
                 <div className="col-start-1 md:col-start-7 col-span-full">
                     <SectionTitle
                         preTitle="CONHECIMENTOS"
-                        text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an."
+                        text="Eu tenho um grande amor em aprender coisas e a cada dia que passa vou incrementando meu conhecimentos em programação e não só. Aqui estão os meus conhecimentos:"
                     >
                         Confira As Minhas <E>Habilidades.</E>
                     </SectionTitle>
                     <div className="md:grid md:grid-cols-2 md:gap-x-4 mt-4">
                         <Hability
                             name="REACTJS"
-                            icon={<ReactIcon className="w-full h-full" />}
-                            text="asdsadasdas"
-                            percents={80}
+                            icon={<ReactIcon />}
+                            text="Websites, Aplicações WEB, SPA..."
+                            percents={93}
                             className="my-5"
                         />
                         <Hability
                             name="REACT NATIVE"
-                            icon={<ReactIcon className="w-full h-full" />}
-                            text="asdsadasdas"
-                            percents={80}
+                            icon={<ReactIcon />}
+                            text="Aplicativos Mobile"
+                            percents={86}
                             className="my-5"
                         />
                         <Hability
                             name="NODEJS"
-                            icon={<NodeJSIcon className="w-full h-full" />}
-                            text="asdadsa"
+                            icon={<NodeJSIcon />}
+                            text="Websites, APIs..."
+                            percents={80}
+                            className="my-5"
+                        />
+                        <Hability
+                            name="PYTHON"
+                            icon={<PythonIcon />}
+                            text="Websites, APIs, Aplicativos Desktop, Scripts de Automação..."
+                            percents={80}
+                            className="my-5"
+                        />
+                        <Hability
+                            name="HTML"
+                            icon={<HTMLIcon />}
+                            text="Websites Estáticos..."
                             percents={95}
                             className="my-5"
                         />
                         <Hability
-                            name="PYTHON"
-                            icon={<PythonIcon className="w-full h-full" />}
-                            text="asdasdas"
-                            percents={95}
-                            className="my-5"
-                        />
-                        <Hability
-                            name="PYTHON"
-                            icon={<PythonIcon className="w-full h-full" />}
-                            text="asdasdas"
-                            percents={60}
-                            className="my-5"
-                        />
-                        <Hability
-                            name="PYTHON"
-                            icon={<PythonIcon className="w-full h-full" />}
-                            text="asdasdas"
-                            percents={70}
+                            name="CSS"
+                            icon={<CSSIcon />}
+                            text="Estilização de Websites"
+                            percents={97}
                             className="my-5"
                         />
                     </div>
@@ -304,4 +341,8 @@ function Home({ openModal }: HomeProps) {
     );
 }
 
-export default withTalkModal(Home);
+export default withTitleAndContent(
+    withTalkModal(withImageDisplayer(Home)),
+    "Anderson Coimbra Soft, As Melhores Soluções de TI Para VOCÊ",
+    "Anderson Coimbra Soft, As Melhores Soluções de TI Para VOCÊ"
+);

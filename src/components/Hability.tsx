@@ -12,12 +12,12 @@ export default function Hability(props: HabilityProps) {
     return (
         <div {...props}>
             <div className="flex items-center mb-1">
-                <div className="w-12 h-12 bg-secondary-2 p-1 rounded-full">
+                <div className="w-12 h-12 bg-secondary-2 p-2 rounded-full">
                     {props.icon}
                 </div>
                 <div className="flex flex-col ml-2">
                     <p className="font-bold leading-none mb-0.5">
-                        {props.name}
+                        {props.name.toUpperCase()}
                     </p>
                     <P className="leading-none">{props.text}</P>
                 </div>

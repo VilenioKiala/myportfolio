@@ -1,5 +1,14 @@
 import React from "react";
+import AfterEffectsIcon from "../../assets/icons/AfterEffectsIcon";
+import CSSIcon from "../../assets/icons/CSSIcon";
+import FigmaIcon from "../../assets/icons/FigmaIcon";
+import HTMLIcon from "../../assets/icons/HTMLIcon";
+import IllustratorIcon from "../../assets/icons/IllustratorIcon";
+import NodeJSIcon from "../../assets/icons/NodeJSIcon";
+import PhotoshopIcon from "../../assets/icons/PhotoshopIcon";
+import PythonIcon from "../../assets/icons/PythonIcon";
 import ReactIcon from "../../assets/icons/ReactIcon";
+import TypescriptIcon from "../../assets/icons/TypescriptIcon";
 import Bobble from "../../components/Bobble";
 import { Emphasis as E } from "../../components/Emphasis";
 import H1 from "../../components/H1";
@@ -9,6 +18,8 @@ import P from "../../components/P";
 import PrimaryButton from "../../components/PrimaryButton";
 import Section from "../../components/Section";
 import SectionTitle from "../../components/SectionTitle";
+import { withTalkModal } from "../../hocs/withTalkModal";
+import withTitleAndContent from "../../hocs/withTitleAndContent";
 
 const myphoto = require("../../assets/images/myphoto.jpg");
 
@@ -16,7 +27,7 @@ type SobreMimProps = {
     openModal: () => void;
 };
 
-export default function SobreMim({ openModal }: SobreMimProps) {
+function SobreMim({ openModal }: SobreMimProps) {
     return (
         <>
             <div className="banner px-6 md:px-16 lg:px-36 mygrid h-[100vh] lg:h-[90vh] justify-center items-center relative overflow-hidden">
@@ -49,13 +60,20 @@ export default function SobreMim({ openModal }: SobreMimProps) {
                 </div>
                 <div className="col-start-1 col-span-full">
                     <P>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
+                        Olá! Eu sou o Vilénio Anderson Coimbra Kiala, tenho 20
+                        anos e sou Angolano, propriamente de Luanda. Estudo
+                        programação à mais de 3 anos e durante esse tempo venho
+                        desenvolvendo imensos projectos relacionados a
+                        desenvolvimento de websites, desenvolvimento de
+                        aplicativos para dispositivos móveis, desenvolvolvimento
+                        de aplicativos para computadores e scripts de automação.
+                        <br />
+                        <br />
+                        Venho estudando cada vez mais, afim de aperfeiçoar os
+                        meus conhecimentos nesta e em outras áreas. Gosto muito
+                        de aprender e compartilhar experiências e trabalhar
+                        junto com os outros desenvolvedores em projectos
+                        colaborativos.
                     </P>
 
                     <div className="grid grid-cols-1 text-center md:text-left md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -104,63 +122,69 @@ export default function SobreMim({ openModal }: SobreMimProps) {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <Hability
                             icon={<ReactIcon />}
-                            percents={80}
+                            percents={93}
                             name="React"
-                            text="asdasdasdasdas"
+                            text="Websites, Aplicações WEB, SPA"
                         />
                         <Hability
                             icon={<ReactIcon />}
-                            percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            percents={86}
+                            name="React Native"
+                            text="Aplicativos Mobile"
                         />
                         <Hability
-                            icon={<ReactIcon />}
+                            icon={<NodeJSIcon />}
                             percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            name="NODEJS"
+                            text="Websites, APIs"
                         />
                         <Hability
-                            icon={<ReactIcon />}
+                            icon={<PythonIcon />}
                             percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            name="PYTHON"
+                            text="Websites, APIs, Aplicativos Desktop, Scripts de Automação"
                         />
                         <Hability
-                            icon={<ReactIcon />}
-                            percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            icon={<HTMLIcon />}
+                            percents={95}
+                            name="HTML"
+                            text="Websites Estáticos"
                         />
                         <Hability
-                            icon={<ReactIcon />}
-                            percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            icon={<CSSIcon />}
+                            percents={97}
+                            name="CSS"
+                            text="Estilização de Websites"
                         />
                         <Hability
-                            icon={<ReactIcon />}
+                            icon={<FigmaIcon />}
                             percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            name="Figma"
+                            text="Interface de Usuário"
                         />
                         <Hability
-                            icon={<ReactIcon />}
-                            percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            icon={<TypescriptIcon />}
+                            percents={88}
+                            name="Typescript"
+                            text="Javascript com Tipagem"
                         />
                         <Hability
-                            icon={<ReactIcon />}
+                            icon={<PhotoshopIcon />}
                             percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            name="Adobe Photoshop"
+                            text="Design Gráfico"
                         />
                         <Hability
-                            icon={<ReactIcon />}
-                            percents={80}
-                            name="React"
-                            text="asdasdasdasdas"
+                            icon={<IllustratorIcon />}
+                            percents={70}
+                            name="Adobe Illustrator"
+                            text="Design Gráfico, Logotipos"
+                        />
+                        <Hability
+                            icon={<AfterEffectsIcon />}
+                            percents={75}
+                            name="Adobe After Effects"
+                            text="Edição de vídeo"
                         />
                     </div>
                 </div>
@@ -183,3 +207,9 @@ export default function SobreMim({ openModal }: SobreMimProps) {
         </>
     );
 }
+
+export default withTitleAndContent(
+    withTalkModal(SobreMim),
+    "Sobre Mim",
+    "Saiba mais sobre Vilénio Anderson Coimbra Kiala - Anderson Coimbra Soft"
+);
