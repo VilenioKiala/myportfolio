@@ -18,7 +18,7 @@ export default function ImageDisplayer({
             {open && (
                 <UpDrop setOpen={setOpen}>
                     <button
-                        className="absolute top-4 right-4 z-[3] w-6 hover:opacity-70 transition-all"
+                        className="absolute top-4 right-4 z-[60] w-6 hover:opacity-70 transition-all"
                         onClick={() => setOpen(false)}
                     >
                         <CloseIcon className="w-full h-full" />
