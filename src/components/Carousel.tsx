@@ -26,8 +26,14 @@ function Carousel({ images, delay }: CarouselProps) {
                 delay: delay || 0,
             }}
         >
-            {images.map((image) => {
-                return <CarouselItem image={image} className="flex-shrink-0" />;
+            {images.map((image, i) => {
+                return (
+                    <CarouselItem
+                        key={i}
+                        image={image}
+                        className="flex-shrink-0"
+                    />
+                );
             })}
         </motion.div>
     );

@@ -2,7 +2,6 @@ import React, { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 import MyLogo from "../../assets/icons/MyLogo";
 import ToggleIcon from "../../assets/icons/ToggleIcon";
-import { withLog } from "../../hocs/withLog";
 import PrimaryButton from "../PrimaryButton";
 import "./Nav.css";
 
@@ -57,4 +56,4 @@ function Nav(props: NavProps) {
     );
 }
 
-export default withLog(Nav, "Renderizou a NAV!");
+export default Nav;

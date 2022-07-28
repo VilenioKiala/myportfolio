@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./home/Home";
 import Trabalhos from "./trabalhos/Trabalhos";
 import SobreMim from "./sobremim/SobreMim";
-import { withLog } from "../hocs/withLog";
 import Error404 from "./error404/Error404";
 
 function AppRouter() {
@@ -17,4 +16,4 @@ function AppRouter() {
     );
 }
 
-export default withLog(AppRouter, "Renderizou o App Router");
+export default AppRouter;
