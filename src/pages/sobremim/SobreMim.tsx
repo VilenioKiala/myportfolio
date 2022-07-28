@@ -31,12 +31,17 @@ function SobreMim({ openModal }: SobreMimProps) {
     return (
         <>
             <div className="banner px-6 md:px-16 lg:px-36 mygrid h-[100vh] lg:h-[90vh] justify-center items-center relative overflow-hidden">
-                <Bobble initial={{ top: 200, left: 200 }} bobbleSize={70} />
                 <Bobble
-                    initial={{ top: 40, left: window.innerWidth - 400 }}
-                    bobbleSize={90}
+                    initial={{ top: 80, left: 10 }}
+                    end={{ top: 50, left: 30 }}
+                    bobbleSize={60}
                 />
-                <Banner className="col-start-1 col-end-13 md:col-start-3 md:col-end-11 lg:col-start-3 lg:col-end-11">
+                <Bobble
+                    initial={{ top: 20, left: 80 }}
+                    end={{ top: 40, left: 70 }}
+                    bobbleSize={30}
+                />
+                <Banner className="col-start-1 col-end-13 md:col-start-3 md:col-end-11 lg:col-start-3 lg:col-end-11 relative z-20">
                     <div
                         className="w-36 h-36 rounded-full bg-cover bg-center border-green-2 border-2"
                         style={{ backgroundImage: `url(${myphoto})` }}
@@ -48,18 +53,13 @@ function SobreMim({ openModal }: SobreMimProps) {
                 </Banner>
             </div>
             <Section className="px-6 md:px-16 lg:px-36 mb-48 mygrid relative overflow-hidden">
-                <Bobble initial={{ top: 200, left: 200 }} bobbleSize={70} />
-                <Bobble
-                    initial={{ top: 40, left: window.innerWidth - 400 }}
-                    bobbleSize={90}
-                />
-                <div className="col-start-1 col-end-13 md:col-start-2 md:col-end-12 lg:col-start-4 lg:col-end-10 text-center">
+                <div className="col-start-1 col-end-13 md:col-start-2 md:col-end-12 lg:col-start-4 lg:col-end-10 text-center relative z-20">
                     <SectionTitle preTitle="SOBRE MIM">
                         Quem Sou <E>Eu?</E>{" "}
                     </SectionTitle>
                 </div>
-                <div className="col-start-1 col-span-full">
-                    <P>
+                <div className="col-start-1 col-span-full relative z-20">
+                    <P className="text-center md:text-left">
                         Olá! Eu sou o Vilénio Anderson Coimbra Kiala, tenho 20
                         anos e sou Angolano, propriamente de Luanda. Estudo
                         programação à mais de 3 anos e durante esse tempo venho
@@ -108,17 +108,22 @@ function SobreMim({ openModal }: SobreMimProps) {
                 </div>
             </Section>{" "}
             <Section className="px-6 md:px-16 lg:px-36 mb-48 mygrid relative overflow-hidden bg-secondary-2 py-12">
-                <Bobble initial={{ top: 200, left: 200 }} bobbleSize={70} />
                 <Bobble
-                    initial={{ top: 40, left: window.innerWidth - 400 }}
-                    bobbleSize={90}
+                    initial={{ top: 20, left: 10 }}
+                    end={{ top: 40, left: 40 }}
+                    bobbleSize={50}
                 />
-                <div className="col-start-1 col-end-13 md:col-start-2 md:col-end-12 lg:col-start-4 lg:col-end-10 text-center">
+                <Bobble
+                    initial={{ top: 80, left: 80 }}
+                    end={{ top: 50, left: 65 }}
+                    bobbleSize={70}
+                />
+                <div className="col-start-1 col-end-13 md:col-start-2 md:col-end-12 lg:col-start-4 lg:col-end-10 text-center relative z-20">
                     <SectionTitle preTitle="CONHECIMENTOS">
                         Todas As Minhas <E>Habilidades.</E>
                     </SectionTitle>
                 </div>
-                <div className="col-start-1 col-span-full">
+                <div className="col-start-1 col-span-full relative z-20">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <Hability
                             icon={<ReactIcon />}
@@ -197,7 +202,7 @@ function SobreMim({ openModal }: SobreMimProps) {
                         Para Você!
                     </SectionTitle>
                     <PrimaryButton
-                        className="px-6 py-2 mt-2"
+                        className="px-6 py-2 mt-2 mx-auto"
                         onClick={openModal}
                     >
                         SOLICITAR AMOSTRA

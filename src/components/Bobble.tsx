@@ -9,28 +9,33 @@ type BobblePos = {
 
 type BobbleProps = {
     initial: BobblePos;
+    end: BobblePos;
     bobbleSize: number;
 };
 
-function Bobble({ initial, bobbleSize }: BobbleProps) {
-    const [pos] = React.useState<BobblePos>(initial);
-
+function Bobble({ initial, bobbleSize, end }: BobbleProps) {
     return (
         <motion.div
             style={{
-                top: `${initial.top}px`,
-                left: `${initial.left}px`,
+                top: `${initial.top}%`,
+                left: `${initial.left}%`,
                 width: `${bobbleSize}px`,
                 height: `${bobbleSize}px`,
             }}
+            initial={{
+                top: `${initial.top}%`,
+                left: `${initial.left}%`,
+            }}
             animate={{
-                top: pos.top,
-                left: pos.left,
+                top: `${end.top}%`,
+                left: `${end.left}%`,
             }}
             transition={{
-                duration: 0.2,
+                duration: 30,
                 type: "tween",
-                ease: "easeOut",
+                ease: "easeInOut",
+                repeatType: "reverse",
+                repeat: Infinity,
             }}
             className="bg-green-2 absolute rounded-full blur-lg opacity-40"
         ></motion.div>

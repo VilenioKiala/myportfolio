@@ -8,7 +8,10 @@ type SeeMoreButtonProps = {
 
 export default function SeeMoreButton(props: SeeMoreButtonProps) {
     return (
-        <Link {...props} className={`flex ${props.className}`}>
+        <Link
+            {...props}
+            className={`flex ${props.className} hover:opacity-75 transition-all`}
+        >
             <div className="font-semibold text-[#D2D2D2]">{props.children}</div>
             <div className="w-3 ml-2">
                 <AngleRight className="w-full h-full" />

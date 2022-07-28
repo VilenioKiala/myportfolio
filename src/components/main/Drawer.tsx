@@ -4,6 +4,9 @@ import Separator from "../Separator";
 import { useLocation } from "react-router-dom";
 import DrawerLink from "../DrawerLink";
 import UpDrop from "../UpDrop";
+import HomeIcon from "../../assets/icons/HomeIcon";
+import WorksIcon from "../../assets/icons/WorksIcon";
+import UserIcon from "../../assets/icons/UserIcon";
 
 type DrawerProps = {
     open: boolean;
@@ -26,7 +29,7 @@ export default function Drawer({ setOpen, open }: DrawerProps) {
                             <DrawerLink
                                 to={{ pathname: "/" }}
                                 active={pathname === "/"}
-                                icon={<></>}
+                                icon={<HomeIcon />}
                                 onClick={() => setOpen(false)}
                             >
                                 HOME
@@ -34,7 +37,7 @@ export default function Drawer({ setOpen, open }: DrawerProps) {
                             <DrawerLink
                                 to={{ pathname: "/trabalhos" }}
                                 active={pathname === "/trabalhos"}
-                                icon={<></>}
+                                icon={<WorksIcon />}
                                 onClick={() => setOpen(false)}
                             >
                                 MEUS TRABALHOS
@@ -42,7 +45,7 @@ export default function Drawer({ setOpen, open }: DrawerProps) {
                             <DrawerLink
                                 to={{ pathname: "/sobremim" }}
                                 active={pathname === "/sobremim"}
-                                icon={<></>}
+                                icon={<UserIcon />}
                                 onClick={() => setOpen(false)}
                             >
                                 SOBRE MIM
