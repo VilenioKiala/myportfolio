@@ -25,7 +25,7 @@ export default function ImageDisplayer({
                     </button>
                     <img
                         src={image}
-                        className="h-[98%] relative z-40 object-contain"
+                        className="h-[80%] relative z-40 object-contain"
                         alt=""
                     />
                 </UpDrop>

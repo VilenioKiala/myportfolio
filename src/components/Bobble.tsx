@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { withLog } from "../hocs/withLog";
 
 type BobblePos = {
     top: number;
@@ -42,4 +41,4 @@ function Bobble({ initial, bobbleSize, end }: BobbleProps) {
     );
 }
 
-export default withLog(Bobble, "Renderizou o componente Bobble");
+export default Bobble;

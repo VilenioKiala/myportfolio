@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import CarouselItem from "./CarouselItem";
 import "./Carousel.css";
@@ -9,10 +9,6 @@ type CarouselProps = {
 };
 
 function Carousel({ images, delay }: CarouselProps) {
-    useEffect(() => {
-        console.log("Re-renderizando o carrossel automático");
-    }, []);
-
     return (
         <motion.div
             className="carouse h-[30rem] mt-[-4rem] relative flex overflow-hidden"

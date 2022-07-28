@@ -1,5 +1,4 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-import { withLog } from "../hocs/withLog";
 import "./PrimaryButton.css";
 
 type PrimaryButtonProps = {
@@ -18,4 +17,4 @@ function PrimaryButton(props: PrimaryButtonProps) {
     );
 }
 
-export default withLog(PrimaryButton, "Renderizou um botão primário");
+export default PrimaryButton;
