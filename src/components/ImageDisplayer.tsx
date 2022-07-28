@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
+import CloseIcon from "../assets/icons/CloseIcon";
 import UpDrop from "./UpDrop";
 
 type ImageDisplayerProps = {
@@ -16,6 +17,12 @@ export default function ImageDisplayer({
         <>
             {open && (
                 <UpDrop setOpen={setOpen}>
+                    <button
+                        className="absolute top-4 right-4 z-[3] w-6 hover:opacity-70 transition-all"
+                        onClick={() => setOpen(false)}
+                    >
+                        <CloseIcon className="w-full h-full" />
+                    </button>
                     <img
                         src={image}
                         className="h-[98%] relative z-40 object-contain"
